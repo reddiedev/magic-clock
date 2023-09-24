@@ -18,8 +18,10 @@ export default function Home() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     useEffect(() => {
-        setHours(dayjs().hour());
-        setMinutes(dayjs().minute());
+        setInterval(() => {
+            setHours(dayjs().hour());
+            setMinutes(dayjs().minute());
+        }, 1 * 1000);
     }, []);
     return (
         <main className="flex min-h-screen flex-col items-center justify-center bg-neutral-950 antialiased">
