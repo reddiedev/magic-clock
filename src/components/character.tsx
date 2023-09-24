@@ -24,27 +24,10 @@ import {
     isElementTwenty,
     isElementTwo
 } from "@/utils/element";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-dayjs.extend(utc);
-dayjs.extend(timezone);
-import { useEffect, useState } from "react";
 
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
-export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
-    const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
-    console.log(timeZone, dayjs.tz.guess());
-    dayjs.tz.setDefault(timeZone);
-    const [time, setTime] = useState(dayjs().tz(timeZone));
-    useEffect(() => {
-        setTime(dayjs().tz(timeZone));
-    }, [timeZone]);
-    console.log(time.hour(), time.utcOffset());
-    const minutes = time.minute();
-    const hours = time.hour() < 12 ? time.hour() : time.hour() - 12;
-
+export default function Character({ xIndex, yIndex, hours, minutes }: { xIndex: number; yIndex: number; hours: number; minutes: number }) {
     const word = WORDS[yIndex];
     const character = word.charAt(xIndex);
     // check what element character is in
