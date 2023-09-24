@@ -62,7 +62,7 @@ export default function Character({ xIndex, yIndex, time }: { xIndex: number; yI
     const isItActive = true;
     const isIsActive = true;
 
-    const isPastActive = minutes > 5 && minutes <= 30;
+    const isPastActive = minutes >= 5 && minutes <= 30;
     const isToActive = minutes > 30;
 
     const isFivePrefActive = (minutes >= 5 && minutes < 10) || (minutes >= 35 && minutes < 40) || minutes >= 55;
