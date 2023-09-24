@@ -18,6 +18,9 @@ export default function Home() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     useEffect(() => {
+        setHours(dayjs().hour());
+        setMinutes(dayjs().minute());
+
         setInterval(() => {
             setHours(dayjs().hour());
             setMinutes(dayjs().minute());
