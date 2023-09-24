@@ -24,20 +24,16 @@ import {
     isElementTwenty,
     isElementTwo
 } from "@/utils/element";
+import dayjs from "dayjs";
 
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
-export default function Character({ xIndex, yIndex, time }: { xIndex: number; yIndex: number; time: Date }) {
+export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number; time: Date }) {
     const word = WORDS[yIndex];
     const character = word.charAt(xIndex);
     // check what element character is in
     const isIt = isElementIt({ xIndex, yIndex });
     const isIs = isElementIs({ xIndex, yIndex });
-
-    if (isIt) {
-        console.log("character", time);
-        console.log(time.getHours(), time.getUTCHours(), time.getTimezoneOffset() / 60);
-    }
 
     const isTwenty = isElementTwenty({ xIndex, yIndex });
     const isQuarter = isElementQuarter({ xIndex, yIndex });
@@ -62,10 +58,8 @@ export default function Character({ xIndex, yIndex, time }: { xIndex: number; yI
     const isEleven = isElementEleven({ xIndex, yIndex });
     const isOclock = isElementOclock({ xIndex, yIndex });
 
-    const minutes = time.getMinutes();
-    const offset = (-1 * time.getTimezoneOffset()) / 60;
-    const utcHours = time.getUTCHours() + offset;
-    const hours = utcHours < 12 ? utcHours : utcHours >= 24 ? 0 : utcHours - 12;
+    const minutes = dayjs().minute();
+    const hours = dayjs().hour() < 12 ? dayjs().hour() : dayjs().hour() - 12;
 
     // check if element is active
     const isItActive = true;

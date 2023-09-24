@@ -11,7 +11,6 @@ import Character from "@/components/character";
 
 export default function Home() {
     const [time, setTime] = useState(new Date());
-    console.log("page", time);
 
     // update current time every minute
     useEffect(() => {
