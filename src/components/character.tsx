@@ -61,8 +61,8 @@ export default function Character({ xIndex, yIndex, hours, minutes }: { xIndex: 
     const isItActive = true;
     const isIsActive = true;
 
-    const isPastActive = minutes >= 5 && minutes <= 30;
-    const isToActive = minutes > 30;
+    const isPastActive = minutes >= 5 && minutes < 35;
+    const isToActive = minutes >= 35;
 
     const isFivePrefActive = (minutes >= 5 && minutes < 10) || (minutes >= 25 && minutes < 30) || (minutes >= 35 && minutes < 40) || minutes >= 55;
     const isTenPrefActive = (minutes >= 10 && minutes < 15) || (minutes >= 50 && minutes < 55);
@@ -70,18 +70,18 @@ export default function Character({ xIndex, yIndex, hours, minutes }: { xIndex: 
     const isTwentyActive = (minutes >= 20 && minutes < 30) || (minutes >= 35 && minutes < 45);
     const isHalfActive = minutes >= 30 && minutes < 35;
 
-    const isOneActive = (hours == 0 && isToActive) || (hours == 1 && minutes <= 30);
-    const isTwoActive = (hours == 1 && isToActive) || (hours == 2 && minutes <= 30);
-    const isThreeActive = (hours == 2 && isToActive) || (hours == 3 && minutes <= 30);
-    const isFourActive = (hours == 3 && isToActive) || (hours == 4 && minutes <= 30);
-    const isFiveActive = (hours == 4 && isToActive) || (hours == 5 && minutes <= 30);
-    const isSixActive = (hours == 5 && isToActive) || (hours == 6 && minutes <= 30);
-    const isSevenActive = (hours == 6 && isToActive) || (hours == 7 && minutes <= 30);
-    const isEightActive = (hours == 7 && isToActive) || (hours == 8 && minutes <= 30);
-    const isNineActive = (hours == 8 && isToActive) || (hours == 9 && minutes <= 30);
-    const isTenActive = (hours == 9 && isToActive) || (hours == 10 && minutes <= 30);
-    const isElevenActive = (hours == 10 && isToActive) || (hours == 11 && minutes <= 30);
-    const isTwelveActive = (hours == 0 && minutes <= 30) || (hours == 11 && isToActive);
+    const isOneActive = (hours == 0 && isToActive) || (hours == 1 && minutes < 35);
+    const isTwoActive = (hours == 1 && isToActive) || (hours == 2 && minutes < 35);
+    const isThreeActive = (hours == 2 && isToActive) || (hours == 3 && minutes < 35);
+    const isFourActive = (hours == 3 && isToActive) || (hours == 4 && minutes < 35);
+    const isFiveActive = (hours == 4 && isToActive) || (hours == 5 && minutes < 35);
+    const isSixActive = (hours == 5 && isToActive) || (hours == 6 && minutes < 35);
+    const isSevenActive = (hours == 6 && isToActive) || (hours == 7 && minutes < 35);
+    const isEightActive = (hours == 7 && isToActive) || (hours == 8 && minutes < 35);
+    const isNineActive = (hours == 8 && isToActive) || (hours == 9 && minutes < 35);
+    const isTenActive = (hours == 9 && isToActive) || (hours == 10 && minutes < 35);
+    const isElevenActive = (hours == 10 && isToActive) || (hours == 11 && minutes < 35);
+    const isTwelveActive = (hours == 0 && minutes < 35) || (hours == 11 && isToActive);
     const isOclockActive = minutes < 5;
 
     const isActive =
