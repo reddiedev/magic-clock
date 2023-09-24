@@ -35,6 +35,7 @@ const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "
 
 export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
     const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+    console.log(timeZone, dayjs.tz.guess());
     dayjs.tz.setDefault(timeZone);
     const [time, setTime] = useState(dayjs().tz(timeZone));
     useEffect(() => {
