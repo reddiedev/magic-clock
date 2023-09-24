@@ -12,6 +12,7 @@ import Character from "@/components/character";
 export default function Home() {
     const [time, setTime] = useState(new Date());
     console.log(time);
+    console.log(time.getHours(), time.getUTCHours(), time.getTimezoneOffset() / 60);
 
     // update current time every minute
     useEffect(() => {
