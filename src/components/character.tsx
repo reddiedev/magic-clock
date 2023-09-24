@@ -1,4 +1,5 @@
 "use client";
+
 import {
     isElementEight,
     isElementEleven,
@@ -32,6 +33,11 @@ export default function Character({ xIndex, yIndex, time }: { xIndex: number; yI
     // check what element character is in
     const isIt = isElementIt({ xIndex, yIndex });
     const isIs = isElementIs({ xIndex, yIndex });
+
+    if (isIt) {
+        console.log("character", time);
+        console.log(time.getHours(), time.getUTCHours(), time.getTimezoneOffset() / 60);
+    }
 
     const isTwenty = isElementTwenty({ xIndex, yIndex });
     const isQuarter = isElementQuarter({ xIndex, yIndex });
