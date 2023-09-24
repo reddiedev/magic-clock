@@ -1,5 +1,3 @@
-"use client";
-
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 /* eslint-disable @next/next/inline-script-id */
 import "./globals.css";

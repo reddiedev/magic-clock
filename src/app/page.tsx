@@ -51,14 +51,13 @@ import { useEffect, useState } from "react";
 
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
-("use client");
+dayjs.tz.setDefault("Asia/Manila");
+
 function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
-    const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
-    dayjs.tz.setDefault(timeZone);
-    const [time, setTime] = useState(dayjs().tz(timeZone));
+    const [time, setTime] = useState(dayjs().tz(dayjs.tz.guess()));
     useEffect(() => {
-        setTime(dayjs().tz(timeZone));
-    }, [timeZone]);
+        setTime(dayjs().tz(dayjs.tz.guess()));
+    }, []);
     const minutes = time.minute();
     const hours = time.hour() < 12 ? time.hour() : time.hour() - 12;
 
