@@ -14,7 +14,7 @@ export function isElementIs({ xIndex, yIndex }: { xIndex: number; yIndex: number
 
 export function isElementTwenty({ xIndex, yIndex }: { xIndex: number; yIndex: number }): boolean {
     if (yIndex > 0) return false;
-    if (xIndex < 7) return false;
+    if (xIndex < 6) return false;
 
     return true;
 }
@@ -63,7 +63,7 @@ export function isElementTo({ xIndex, yIndex }: { xIndex: number; yIndex: number
 
 export function isElementTwelve({ xIndex, yIndex }: { xIndex: number; yIndex: number }): boolean {
     if (yIndex !== 3) return false;
-    if (xIndex < 3 || xIndex > 7) return false;
+    if (xIndex < 3 || xIndex > 8) return false;
 
     return true;
 }
