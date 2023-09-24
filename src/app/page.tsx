@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         setInterval(() => {
             setTime(new Date());
-        }, 10 * 1000);
+        }, 1 * 1000);
     }, []);
 
     return (

@@ -56,7 +56,9 @@ export default function Character({ xIndex, yIndex, time }: { xIndex: number; yI
     const isOclock = isElementOclock({ xIndex, yIndex });
 
     const minutes = time.getMinutes();
-    const hours = time.getHours() < 12 ? time.getHours() : time.getHours() - 12;
+    const offset = (-1 * time.getTimezoneOffset()) / 60;
+    const utcHours = time.getUTCHours() + offset;
+    const hours = utcHours < 12 ? utcHours : utcHours >= 24 ? 0 : utcHours - 12;
 
     // check if element is active
     const isItActive = true;

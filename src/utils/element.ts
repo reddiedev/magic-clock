@@ -70,7 +70,7 @@ export function isElementTwelve({ xIndex, yIndex }: { xIndex: number; yIndex: nu
 
 export function isElementOne({ xIndex, yIndex }: { xIndex: number; yIndex: number }): boolean {
     if (yIndex !== 3) return false;
-    if (xIndex < 10) return false;
+    if (xIndex < 9) return false;
 
     return true;
 }
