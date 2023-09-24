@@ -36,10 +36,10 @@ const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "
 export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
     const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
     dayjs.tz.setDefault(timeZone);
-    const [time, setTime] = useState(dayjs());
+    const [time, setTime] = useState(dayjs().tz(timeZone));
     useEffect(() => {
-        setTime(dayjs());
-    }, []);
+        setTime(dayjs().tz(timeZone));
+    }, [timeZone]);
     const minutes = time.minute();
     const hours = time.hour() < 12 ? time.hour() : time.hour() - 12;
 
