@@ -25,10 +25,18 @@ import {
     isElementTwo
 } from "@/utils/element";
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
 
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
-export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number; time: Date }) {
+export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
+    const [time, setTime] = useState(dayjs());
+    useEffect(() => {
+        setTime(dayjs());
+    }, []);
+    const minutes = time.minute();
+    const hours = time.hour() < 12 ? time.hour() : time.hour() - 12;
+
     const word = WORDS[yIndex];
     const character = word.charAt(xIndex);
     // check what element character is in
@@ -57,9 +65,6 @@ export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: 
     const isTen = isElementTen({ xIndex, yIndex });
     const isEleven = isElementEleven({ xIndex, yIndex });
     const isOclock = isElementOclock({ xIndex, yIndex });
-
-    const minutes = dayjs().minute();
-    const hours = dayjs().hour() < 12 ? dayjs().hour() : dayjs().hour() - 12;
 
     // check if element is active
     const isItActive = true;
