@@ -41,6 +41,7 @@ export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: 
     useEffect(() => {
         setTime(dayjs().tz(timeZone));
     }, [timeZone]);
+    console.log(time.hour(), time.utcOffset());
     const minutes = time.minute();
     const hours = time.hour() < 12 ? time.hour() : time.hour() - 12;
 
