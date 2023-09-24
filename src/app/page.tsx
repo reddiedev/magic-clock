@@ -11,12 +11,13 @@ import Character from "@/components/character";
 
 export default function Home() {
     const [time, setTime] = useState(new Date());
+    console.log(time);
 
     // update current time every minute
     useEffect(() => {
         setInterval(() => {
             setTime(new Date());
-        }, 60 * 1000);
+        }, 10 * 1000);
     }, []);
 
     return (
