@@ -25,11 +25,17 @@ import {
     isElementTwo
 } from "@/utils/element";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+dayjs.extend(utc);
+dayjs.extend(timezone);
 import { useEffect, useState } from "react";
 
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
 export default function Character({ xIndex, yIndex }: { xIndex: number; yIndex: number }) {
+    const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+    dayjs.tz.setDefault(timeZone);
     const [time, setTime] = useState(dayjs());
     useEffect(() => {
         setTime(dayjs());
