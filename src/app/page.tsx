@@ -18,11 +18,11 @@ export default function Home() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     useEffect(() => {
-        setHours(dayjs().hour());
+        setHours(dayjs().hour() < 12 ? dayjs().hour() : dayjs().hour() - 12);
         setMinutes(dayjs().minute());
 
         setInterval(() => {
-            setHours(dayjs().hour());
+            setHours(dayjs().hour() < 12 ? dayjs().hour() : dayjs().hour() - 12);
             setMinutes(dayjs().minute());
         }, 1 * 1000);
     }, []);
