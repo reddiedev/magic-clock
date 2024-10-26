@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body>{children}</body>
-            <Script src="https://analytics.eu.umami.is/script.js" data-website-id="a53ba819-c0ea-4053-8fff-aeca8b651253" data-domains="clock.reddie.dev" />
+            <Script src="https://analytics.reddie.dev/script.js" data-website-id="2f786f73-0edb-4b7b-969c-6434cb306aa0" />
         </html>
     );
 }
