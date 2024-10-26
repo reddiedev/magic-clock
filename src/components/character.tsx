@@ -28,7 +28,6 @@ import {
 const WORDS = ["ITRISOTWENTY", "QUARTERAHALF", "TENFIVELPAST", "TOUTWELVEONE", "TWOTHREEFOUR", "FIVESIXSEVEN", "EIGHTNINETEN", "LKIELEVENALM", "UO'CLOCKDLWP"];
 
 export default function Character({ xIndex, yIndex, hours, minutes }: { xIndex: number; yIndex: number; hours: number; minutes: number }) {
-    console.log(hours, minutes);
     const word = WORDS[yIndex];
     const character = word.charAt(xIndex);
     // check what element character is in
