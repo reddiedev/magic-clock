@@ -1,0 +1,10 @@
+services:
+  magic-clock:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    restart: always 
+    ports:
+      - "3002:3000"
+    image: magic-clock
